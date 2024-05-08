@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Management System - FAQ</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+
+.faq h3 {
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.faq h3:hover {
+    background-color: #e0e0e0;
+}
+
+.faq p {
+    color: #666;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styles for search input */
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container input[type=text] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styles for FAQ sections */
+.faq {
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Add border to create a box */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 10px; /* Add padding for spacing */
+}
+
+.question {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.answer {
+    display: none;
+    margin-top: 10px;
+    color: #666;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Help Center</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                 <li><a href="#">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search FAQ...">
+        </div>
+
+        <div id="faqList">
+
+            <section class="faq">
+                <h3 class="question">How do I log in?</h3>
+                <p class="answer">To log in, go to the login page and enter your username and password in the provided fields. Click on the "Log In" button to access your account.</p>
+            </section>
+        
+            <section class="faq">
+                <h3 class="question">How can I change my password?</h3>
+                <p class="answer">To change your password, go to your account settings or profile page. Look for the "Change Password" option and follow the prompts to enter your current password and set a new one.</p>
+            </section>
+        
+            <section class="faq">
+                <h3 class="question">How do I use the search bar?</h3>
+                <p class="answer">To use the search bar, simply type your search query into the search field and press Enter or click on the search icon. The system will then display the search results based on your query.</p>
+            </section>
+        
+            <section class="faq">
+                <h3 class="question">How can I print a report?</h3>
+                <p class="answer">To print a report, navigate to the section containing the report you want to print. Look for the "Print" or "Download" option, which may be located in the toolbar or menu. Select the desired report format and follow the prompts to print the report.</p>
+            </section>
+        
+            <section class="faq">
+                <h3 class="question">How do I add new equipment?</h3>
+                <p class="answer" >To add new equipment, navigate to the Equipment section and click on the "Add Equipment" button. Fill out the required information and submit the form.</p>
+            </section>
+            
+            <section class="faq">
+                <h3 class="question">How can I update equipment details?</h3>
+                <p class="answer">To update equipment details, go to the Equipment section and find the equipment you want to update. Click on the "Edit" or "Update" button next to the equipment entry, make the necessary changes, and save the updates.</p>
+            </section>
+            
+            <section class="faq">
+                <h3 class="question">What should I do if I encounter an issue?</h3>
+                <p class="answer">If you encounter any issues or have questions that are not addressed in this FAQ, please contact our support team for assistance. You can find the contact information on the About page.</p>
+            </section>
+
+            <section class="faq">
+                <h3 class="question">How do I add new equipment?</h3>
+                <p class="answer">To add new equipment, navigate to the Equipment section and click on the "Add Equipment" button. Fill out the required information and submit the form.</p>
+            </section>
+            
+            
+    <section class="faq">
+        <h3 class="question">How do I delete equipment?</h3>
+        <p class="answer">To delete equipment, navigate to the Equipment section and find the equipment you want to delete. Click on the "Delete" button next to the equipment entry, confirm the deletion when prompted, and the equipment will be removed from the system.</p>
+    </section>
+
+    <section class="faq">
+        <h3 class="question">Can I export equipment data?</h3>
+        <p class="answer">Yes, you can export equipment data. Navigate to the Equipment section and look for the "Export" or "Download" option. Select the desired format (e.g., CSV, Excel) and follow the prompts to download the equipment data.</p>
+    </section>
+
+            <!-- Add more FAQ sections as needed -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Equipment Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript for toggling FAQ answers and filtering FAQ items based on search input
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.question');
+
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+
+            const searchInput = document.getElementById('searchInput');
+            const faqItems = document.querySelectorAll('.faq');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = searchInput.value.toLowerCase();
+
+                faqItems.forEach(faqItem => {
+                    const question = faqItem.querySelector('.question').innerText.toLowerCase();
+                    const answer = faqItem.querySelector('.answer').innerText.toLowerCase();
+
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        faqItem.style.display = 'block';
+                    } else {
+                        faqItem.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
